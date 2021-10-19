@@ -17,7 +17,7 @@ pipeline {
         stage('Check website is up') {
             steps {
                 echo 'Check website is up'
-                sh 'curl -Is 5.189.159.78 | head -n 1'
+                sh 'curl -Is 52.189.159.78 | head -n 1'
             }
         }
     }
