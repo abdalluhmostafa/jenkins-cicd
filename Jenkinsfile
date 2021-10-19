@@ -12,6 +12,7 @@ pipeline {
             steps {
                 echo 'connect to remote host and pull down the latest version'
                 sh 'ssh -p7413 hub@5.189.159.78 "cd /home/hub/cicd.hub-secure.com; git pull"'
+		sh 'cat hello'
             }
         }
         stage('Check website is up') {
