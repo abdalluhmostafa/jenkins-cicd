@@ -11,14 +11,14 @@ pipeline {
         stage('push repo to remote host') {
             steps {
                 echo 'connect to remote host and pull down the latest version'
-                sh 'ssh -p7413 hub@5.189.159.78 "cd /home/hub/cicd.hub-secure.com; git pull"'
+                sh 'ssh -pPOPRT USER@IP "cd /var/www/html; git pull"'
 		sh 'cat hello'
             }
         }
         stage('Check website is up') {
             steps {
                 echo 'Check website is up'
-                sh 'curl -Is 5.189.159.78 | head -n 1'
+                sh 'curl -Is test.com | head -n 1'
             }
         }
     }
